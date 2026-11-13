@@ -1,0 +1,5 @@
+{
+  // Local chat mode: read only .github/copilot-instructions.md, skip the identical AGENTS.md and CLAUDE.md copies
+  "chat.useAgentsMdFile": false,
+  "chat.useClaudeMdFile": false
+}

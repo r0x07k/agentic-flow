@@ -1,0 +1,43 @@
+# Private assets: keep the folder and its guide, ignore the contents (see assets-private/README.md)
+/assets-private/*
+!/assets-private/README.md
+
+# Local-only regenerable scratch: keep the folder and its guide, ignore the contents
+/assets-temp/*
+!/assets-temp/README.md
+
+# Per-user agent files that must not be shared
+CLAUDE.local.md
+AGENTS.override.md
+.claude/settings.local.json
+
+# Aider chat history and caches (transcripts can contain pasted secrets)
+.aider*
+!.aider.conf.yml
+
+# Secrets and environments
+.env
+*.pem
+*.key
+# ...but not Keynote decks kept as shared assets
+!/assets/**/*.key
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+.next/
+
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/

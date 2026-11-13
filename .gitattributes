@@ -1,0 +1,6 @@
+# Normalize text to LF so the mirrored agent files stay byte-identical on every OS
+* text=auto eol=lf
+
+# Windows batch files need CRLF, or cmd.exe can misread labels and GOTO
+*.bat text eol=crlf
+*.cmd text eol=crlf
