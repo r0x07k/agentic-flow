@@ -5,53 +5,6 @@ small app, a write-up — gets a permanent, predictable home, and a few plain Ma
 of what exists, what is current, and what has been learned. It works the same with any AI coding
 agent (Claude Code, Codex, Gemini, GitHub Copilot, Cursor, …) or with none at all.
 
-## Get your own private copy
-
-Your copy will hold your notes and memory, so keep it private. **Do not use GitHub's Fork button:**
-a fork of a public repository is always public. Make a separate private repository instead.
-
-With the [GitHub CLI](https://cli.github.com/) (`gh`), in a terminal (`gh auth login` is needed only
-once per machine):
-
-```
-gh auth login
-git clone https://github.com/r0x07k/agentic-flow.git my-flow
-cd my-flow
-git remote rename origin upstream
-gh repo create my-flow --private --source=. --remote=origin --push
-```
-
-Without the CLI: on github.com choose **New repository**, name it, select **Private**, and leave
-*Add a README*, *.gitignore* and *license* unset (the repository must be empty). Then run, with
-`<your-user>` replaced by your GitHub user name:
-
-```
-git clone https://github.com/r0x07k/agentic-flow.git my-flow
-cd my-flow
-git remote rename origin upstream
-git remote add origin https://github.com/<your-user>/my-flow.git
-git push -u origin main
-```
-
-`my-flow` is only an example name.
-
-**Taking later improvements to this skeleton.** The `upstream` remote points here. To see what
-changed and merge it:
-
-```
-git fetch upstream
-git log --oneline main..upstream/main
-git merge upstream/main
-```
-
-If the merge reports conflicts:
-- `AGENTS.md` and its mirrors: resolve `AGENTS.md`, then copy it over `CLAUDE.md`, `GEMINI.md` and
-  `.github/copilot-instructions.md` so the four stay identical.
-- `MEMORY.md` and anything else that is yours: keep your version with `git checkout --ours <file>`.
-
-Then `git add` the files and `git commit`. If you don't want updates, remove the remote with
-`git remote remove upstream`.
-
 ## The scheme
 
 **1. Work — `flow/<program>/<project>/<task>/`**
@@ -118,3 +71,50 @@ git diff --no-index AGENTS.md .github/copilot-instructions.md
 ```
 
 No output means identical. Every other guide in the repository is a plain `README.md`.
+
+## Get your own private copy
+
+Your copy will hold your notes and memory, so keep it private. **Do not use GitHub's Fork button:**
+a fork of a public repository is always public. Make a separate private repository instead.
+
+With the [GitHub CLI](https://cli.github.com/) (`gh`), in a terminal (`gh auth login` is needed only
+once per machine):
+
+```
+gh auth login
+git clone https://github.com/r0x07k/agentic-flow.git my-flow
+cd my-flow
+git remote rename origin upstream
+gh repo create my-flow --private --source=. --remote=origin --push
+```
+
+Without the CLI: on github.com choose **New repository**, name it, select **Private**, and leave
+*Add a README*, *.gitignore* and *license* unset (the repository must be empty). Then run, with
+`<your-user>` replaced by your GitHub user name:
+
+```
+git clone https://github.com/r0x07k/agentic-flow.git my-flow
+cd my-flow
+git remote rename origin upstream
+git remote add origin https://github.com/<your-user>/my-flow.git
+git push -u origin main
+```
+
+`my-flow` is only an example name.
+
+**Taking later improvements to this skeleton.** The `upstream` remote points here. To see what
+changed and merge it:
+
+```
+git fetch upstream
+git log --oneline main..upstream/main
+git merge upstream/main
+```
+
+If the merge reports conflicts:
+- `AGENTS.md` and its mirrors: resolve `AGENTS.md`, then copy it over `CLAUDE.md`, `GEMINI.md` and
+  `.github/copilot-instructions.md` so the four stay identical.
+- `MEMORY.md` and anything else that is yours: keep your version with `git checkout --ours <file>`.
+
+Then `git add` the files and `git commit`. If you don't want updates, remove the remote with
+`git remote remove upstream`.
