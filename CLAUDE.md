@@ -22,6 +22,28 @@ registry, and the memory honest.
 **Read this first, every session.** It is the contract for *where* things go and *how* the index is
 kept. Follow it strictly — the value of this repository is that its structure never rots.
 
+## Before any substantial prompt: check the flow first
+
+Every prompt that produces something worth keeping is filed work. That includes research, an
+analysis, a report, a plan, a document, code, or a multi-step investigation, however casually it is
+asked. Only trivial prompts skip this: a one-line
+fact, a quick question about this repository itself, small talk. **When in doubt, treat the prompt as
+substantial.**
+
+For a substantial prompt, **before doing the work**:
+
+1. **Look.** Read `MEMORY.md`. Search `REGISTRY.md` and `memory-longterm/` for the topic, using
+   keywords and synonyms, and glance at the `flow/` tree. Use what is already recorded.
+2. **Place it.** If an existing task fits, extend it. If an existing project fits, add a new task
+   under it. If neither fits, create the program, project, or task that is missing, choosing the
+   smallest correct placement (rule 5). Decide the path before writing any file.
+3. **Do the work into the task folder.** Save the result there (report, notes, sources, code). The
+   chat reply summarizes it and points to the file; it is never the only copy.
+4. **Ripple through memory** in the same change: add or update the `REGISTRY.md` row; re-read
+   `MEMORY.md` and update it if the gist changed; add a `memory-longterm/` note if something durable
+   was learned.
+5. **Report** where the work was filed and which memory files changed.
+
 ## Layout
 
 ```
@@ -105,7 +127,8 @@ it earns one, and fix a row the moment its target moves.
 ## Rules (follow strictly)
 
 1. **Follow the structure.** Real work goes in `flow/<program>/<project>/<task>/`. If a piece of work
-   does not obviously fit, decide its program, project, and task *before* writing any file.
+   does not obviously fit, decide its program, project, and task *before* writing any file. For any
+   substantial prompt, run the check-the-flow-first steps above before starting.
 2. **Reuse; do not duplicate.** Before creating a program, project, task, or asset, search
    `REGISTRY.md` and the tree. If a fitting program or project exists, nest under it. If a
    near-identical task exists, extend it instead of forking a slightly different copy.
